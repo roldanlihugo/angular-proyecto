@@ -11,6 +11,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
+import { CreateClienteComponent } from './components/clientes/create-cliente/create-cliente.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { IndexClienteComponent } from './components/clientes/index-cliente/index
     SidebarComponent,
     LoginComponent,
     IndexClienteComponent,
+    CreateClienteComponent,
+
   ],
   imports: [
     BrowserModule,
