@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var ClientesSchema = Schema({
+var ClienteSchema = Schema({
     nombres: {type: String, required: true},
     apellidos: {type: String, required: true},
     pais: {type: String, required: false},
@@ -18,4 +18,4 @@ var ClientesSchema = Schema({
 
 });
 
-module.exports = mongoose.model('cliente',ClientesSchema);
+module.exports = mongoose.model('cliente',ClienteSchema);

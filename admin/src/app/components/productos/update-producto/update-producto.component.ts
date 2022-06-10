@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 import { GLOBAL } from 'src/app/services/GLOBAL';
 import { ProductoService } from 'src/app/services/producto.service';
 
@@ -22,17 +23,25 @@ export class UpdateProductoComponent implements OnInit {
   public load_btn = false;
   public id:any;
   public url:any;
+  public config_global : any ={};
 
   constructor(
     private _route : ActivatedRoute,
     private _productoService : ProductoService,
-    private _router:Router
+    private _router:Router,
+    private _adminService : AdminService,
   ) {
     this.config ={
       height: 500
     }
     this.token = localStorage.getItem('token');
     this.url = GLOBAL.url;
+    this._adminService.obtener_config_publico().subscribe(
+      response=>{
+        this.config_global = response.data;
+        console.log(this.config_global);
+      }
+    )
    }
 
   ngOnInit(): void {
