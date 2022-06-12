@@ -23,6 +23,11 @@
                 <button class="btn btn-primary" type="button" (click)="filtrar()">Filtrar</button>
                 <button class="btn btn-info" type="button" (click)="resetear()">Resetear</button>
               </div>
+              </div>
+
+
+            <div class="col-12 mt-3">
+              <button class="btn btn-success" (click)="download_excel()">Exportar a excel</button>
             </div>
         </div>
       </div>
@@ -75,9 +80,11 @@
                               <a class="dropdown-item" [routerLink]="['/panel/productos',item._id] "routerLinkActive="router-link-active">Editar Producto</a>
                               <a class="dropdown-item" style="cursor: pointer" data-toggle="modal" [attr.data-target]="'#delete-'+item._id">Eliminar producto</a>
                               <a class="dropdown-item" [routerLink]="['/panel/productos/inventario',item._id] "routerLinkActive="router-link-active">Inventario</a>
+                              <a class="dropdown-item" [routerLink]="['/panel/variedades/inventario',item._id] "routerLinkActive="router-link-active">Variedades</a>
+                              <a class="dropdown-item" [routerLink]="['/panel/variedades/galeria',item._id] "routerLinkActive="router-link-active">Galeria</a>
                             </div>
                           </div>
-                          
+
                           <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" style="display: none;" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
@@ -107,6 +114,7 @@
 
               </table>
           </div>
+        </div>
       </div>
       <div class="card-footer">
         <ngb-pagination
@@ -115,4 +123,4 @@
         [collectionSize]="productos.length"></ngb-pagination>
       </div>
 
-</div>
+
