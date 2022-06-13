@@ -40,6 +40,11 @@ export class AdminService {
 
       console.log(decodedToken);
 
+      if(helper.isTokenExpired(token)){
+        localStorage.clear();
+        return false;
+      }
+
       if(!decodedToken){
         console.log('NO ACCESO');
         localStorage.removeItem('token');
