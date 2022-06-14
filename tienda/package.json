@@ -20,8 +20,11 @@
     "@angular/router": "~13.3.0",
     "@auth0/angular-jwt": "^5.0.2",
     "jquery": "^3.6.0",
+    "ng2-nouislider": "^1.8.2",
+    "nouislider": "^15.6.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "wnumb": "^1.2.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
