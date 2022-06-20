@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { routing } from "./app.routing";
+import { NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+import { routing } from './app.routing';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/usuario/perfil/perfil.component';
 import { SidebarComponent } from './components/usuario/sidebar/sidebar.component';
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
+import { NouisliderModule } from 'ng2-nouislider';
 
 
 @NgModule({
@@ -31,7 +33,10 @@ import { IndexProductoComponent } from './components/productos/index-producto/in
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    NouisliderModule,
+    NgbPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

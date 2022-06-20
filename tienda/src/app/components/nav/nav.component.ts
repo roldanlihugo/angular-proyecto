@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { ClienteService } from '../../services/cliente.service';
+import { ClienteService } from "src/app/services/cliente.service";
 
 declare var $:any;
 declare var jQuery:any;
@@ -17,6 +17,7 @@ export class NavComponent implements OnInit {
   public token : any = '';
   public id : any = '';
   public user_lc : any = {};
+  public config_global : any = {};
 
   constructor(
     private _clienteService: ClienteService,
@@ -24,6 +25,12 @@ export class NavComponent implements OnInit {
   ) {
     this.token = localStorage.getItem('token');
     this.id = localStorage.getItem('_id');
+
+    this._clienteService.obtener_config_publico().subscribe(
+      response=>{
+        this.config_global = response.data;
+      }
+    )
 
     if(this.token){
       this._clienteService.obtener_cliente_guest(this.id,this.token).subscribe(
@@ -37,7 +44,6 @@ export class NavComponent implements OnInit {
           }
         },
         error =>{
-          console.log(error);
           this.user = undefined;
         }
       );

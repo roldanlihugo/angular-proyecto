@@ -20,7 +20,7 @@
 
             <ng-container *ngIf="user_lc==undefined">
               <li class="nav-item d-lg-block d-none dropdown">
-                <a  class="nav-tool">
+                <a [routerLink]="['/login']" class="nav-tool">
                   <i class="cxi-profile nav-tool-icon"></i>
                   <span class="nav-tool-label">Iniciar sesión</span>
                 </a>
@@ -28,7 +28,7 @@
 
             </ng-container>
             <ng-container *ngIf="user_lc">
-              <li class="nav-item d-lg-block d-none mb-0 dropdown">
+              <li class="nav-item d-lg-block d-none dropdown">
                 <a class="nav-tool dropdown-toggle" toggle="dropdown" style="cursor: pointer;">
                   <i class="cxi-profile nav-tool-icon"></i>
                   <span class="nav-tool-label">{{user_lc.nombres}}</span>
@@ -86,9 +86,9 @@
           <li class="nav-item dropdown">
             <a [routerLink]="['/productos']" routerLinkActive="active" class="nav-link dropdown-toggle" data-toggle="dropdown">Tienda</a>
             <ul class="dropdown-menu">
-              <li><a href="shop-catalog.html" class="dropdown-item">Catalog with Filters</a></li>
-              <li><a href="shop-single.html" class="dropdown-item">Single Product</a></li>
-              <li><a href="checkout.html" class="dropdown-item">Checkout</a></li>
+              <li *ngFor="let item of config_global.categorias">
+                <a [routerLink]="['/productos/categoria/',item.titulo.toLowerCase()]" routerLinkActive="router-link-active"  class="dropdown-item"><i class="{{item.icono}}"></i> &nbsp;{{item.titulo}}</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown mega-dropdown">
